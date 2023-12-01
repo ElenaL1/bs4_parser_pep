@@ -1,5 +1,7 @@
 from pathlib import Path
 
+LOG_FORMAT = '"%(asctime)s - [%(levelname)s] - %(message)s"'
+DT_FORMAT = '%d.%m.%Y %H:%M:%S'
 MAIN_DOC_URL = 'https://docs.python.org/3/'
 PEP_DOC_URL = 'https://peps.python.org/'
 BASE_DIR = Path(__file__).parent
@@ -14,3 +16,8 @@ EXPECTED_STATUS = {
     'W': ('Withdrawn',),
     '': ('Draft', 'Active'),
 }
+OUTPUT_CHOICES = ('pretty', 'file')
+LOG_DIR = BASE_DIR / 'logs'
+PYTHON_DOC_VERSION_STATUS_PATTERN = (
+    r'Python (?P<version>\d\.\d+) \((?P<status>.*)\)')
+PDF_ZIP_FILE_PATTERN = r'.+pdf-a4\.zip$'
